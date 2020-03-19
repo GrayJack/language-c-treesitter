@@ -8,7 +8,7 @@
     "clang",
     "c-lang",
     "cpp",
-    "c++",
+    "c++"
   ],
   "main": "lib/main",
   "homepage": "https://atom.github.io/language-c",
