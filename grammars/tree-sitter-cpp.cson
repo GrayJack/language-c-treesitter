@@ -91,31 +91,31 @@ scopes:
   '"#include"': 'keyword.control.directive'
   'preproc_directive': 'keyword.control.directive'
 
-  '"if"': 'keyword.control'
-  '"else"': 'keyword.control'
-  '"do"': 'keyword.control'
-  '"for"': 'keyword.control'
-  '"while"': 'keyword.control'
-  '"break"': 'keyword.control'
-  '"continue"': 'keyword.control'
-  '"return"': 'keyword.control'
-  '"switch"': 'keyword.control'
-  '"case"': 'keyword.control'
-  '"default"': 'keyword.control'
-  '"goto"': 'keyword.control'
+  '"if"': 'keyword.control.if'
+  '"else"': 'keyword.control.else'
+  '"do"': 'keyword.control.do'
+  '"for"': 'keyword.control.for'
+  '"while"': 'keyword.control.while'
+  '"break"': 'keyword.control.break'
+  '"continue"': 'keyword.control.continue'
+  '"return"': 'keyword.control.return'
+  '"switch"': 'keyword.control.switch'
+  '"case"': 'keyword.control.case'
+  '"default"': 'keyword.control.default'
+  '"goto"': 'keyword.control.goto'
 
-  '"struct"': 'keyword.control'
-  '"enum"': 'keyword.control'
-  '"union"': 'keyword.control'
-  '"typedef"': 'keyword.control'
-  '"class"': 'keyword.control'
-  '"using"': 'keyword.control'
-  '"namespace"': 'keyword.control'
-  '"template"': 'keyword.control'
-  '"typename"': 'keyword.control'
-  '"try"': 'keyword.control'
-  '"catch"': 'keyword.control'
-  '"throw"': 'keyword.control'
+  '"struct"': 'keyword.control.struct'
+  '"enum"': 'keyword.control.enum'
+  '"union"': 'keyword.control.union'
+  '"typedef"': 'keyword.control.typedef'
+  '"class"': 'keyword.control.class'
+  '"using"': 'keyword.control.using'
+  '"namespace"': 'keyword.control.namespace'
+  '"template"': 'keyword.control.namespace'
+  '"typename"': 'keyword.control.typename'
+  '"try"': 'keyword.control.try'
+  '"catch"': 'keyword.control.catch'
+  '"throw"': 'keyword.control.throw'
   '"__attribute__"': 'keyword.attribute'
 
   'preproc_function_def > identifier:nth-child(1)': 'entity.name.function.preprocessor'
@@ -133,6 +133,9 @@ scopes:
   call_expression > identifier,
   call_expression > field_expression > field_identifier,
   call_expression > scoped_identifier > identifier,
+  ''': 'entity.name.function.call'
+
+  '''
   template_function > identifier,
   template_function > scoped_identifier > identifier,
   template_method > field_identifier,
@@ -140,7 +143,18 @@ scopes:
   function_declarator > field_identifier,
   function_declarator > scoped_identifier > identifier,
   destructor_name > identifier
-  ''': 'entity.name.function'
+  ''' : 'entity.name.function.def'
+
+  '''
+  parameter_declaration > identifier,
+  parameter_declaration > pointer_declarator > identifier,
+  parameter_declaration > pointer_declarator > pointer_declarator > identifier,
+  parameter_declaration > pointer_declarator > pointer_declarator > pointer_declarator > identifier,
+  parameter_declaration > pointer_declarator > pointer_declarator > pointer_declarator > pointer_declarator > identifier,
+  parameter_declaration > reference_declarator > identifier,
+  parameter_declaration > abstract_reference_declarator > identifier,
+  optional_parameter_declaration > identifier,
+  ''' : 'entity.name.variable.parameter'
 
   'statement_identifier': 'constant.variable'
 
@@ -167,25 +181,25 @@ scopes:
   'true': 'constant.language.boolean'
   'false': 'constant.language.boolean'
 
-  '"extern"': 'storage.modifier'
-  '"static"': 'storage.modifier'
-  '"register"': 'storage.modifier'
-  '"friend"': 'storage.modifier'
-  '"inline"': 'storage.modifier'
-  '"explicit"': 'storage.modifier'
-  '"const"': 'storage.modifier'
-  '"constexpr"': 'storage.modifier'
-  '"volatile"': 'storage.modifier'
-  '"restrict"': 'storage.modifier'
-  'function_specifier': 'storage.modifier'
-  '"public"': 'storage.modifier'
-  '"private"': 'storage.modifier'
-  '"protected"': 'storage.modifier'
-  '"final"': 'storage.modifier'
-  '"override"': 'storage.modifier'
-  '"virtual"': 'storage.modifier'
-  '"noexcept"': 'storage.modifier'
-  '"mutable"': 'storage.modifier'
+  '"extern"': 'storage.modifier.extern'
+  '"static"': 'storage.modifier.static'
+  '"register"': 'storage.modifier.register'
+  '"friend"': 'storage.modifier.friend'
+  '"inline"': 'storage.modifier.inline'
+  '"explicit"': 'storage.modifier.explicit'
+  '"const"': 'storage.modifier.const'
+  '"constexpr"': 'storage.modifier.constexpr'
+  '"volatile"': 'storage.modifier.volatile'
+  '"restrict"': 'storage.modifier.restrict'
+  'function_specifier': 'storage.modifier.function-spacifier'
+  '"public"': 'storage.modifier.public'
+  '"private"': 'storage.modifier.private'
+  '"protected"': 'storage.modifier.protected'
+  '"final"': 'storage.modifier.final'
+  '"override"': 'storage.modifier.override'
+  '"virtual"': 'storage.modifier.virtual'
+  '"noexcept"': 'storage.modifier.noexcept'
+  '"mutable"': 'storage.modifier.mutable'
 
   '";"': 'punctuation.terminator.statement'
   '"["': 'punctuation.definition.begin.bracket.square'

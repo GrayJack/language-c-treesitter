@@ -75,23 +75,23 @@ scopes:
   '"#include"': 'keyword.control.directive'
   'preproc_directive': 'keyword.control.directive'
 
-  '"if"': 'keyword.control'
-  '"else"': 'keyword.control'
-  '"do"': 'keyword.control'
-  '"for"': 'keyword.control'
-  '"while"': 'keyword.control'
-  '"break"': 'keyword.control'
-  '"continue"': 'keyword.control'
-  '"return"': 'keyword.control'
-  '"switch"': 'keyword.control'
-  '"case"': 'keyword.control'
-  '"default"': 'keyword.control'
-  '"goto"': 'keyword.control'
+  '"if"': 'keyword.control.if'
+  '"else"': 'keyword.control.else'
+  '"do"': 'keyword.control.do'
+  '"for"': 'keyword.control.for'
+  '"while"': 'keyword.control.while'
+  '"break"': 'keyword.control.break'
+  '"continue"': 'keyword.control.continue'
+  '"return"': 'keyword.control.return'
+  '"switch"': 'keyword.control.switch'
+  '"case"': 'keyword.control.case'
+  '"default"': 'keyword.control.default'
+  '"goto"': 'keyword.control.goto'
 
-  '"struct"': 'keyword.control'
-  '"enum"': 'keyword.control'
-  '"union"': 'keyword.control'
-  '"typedef"': 'keyword.control'
+  '"struct"': 'keyword.control.struct'
+  '"enum"': 'keyword.control.enum'
+  '"union"': 'keyword.control.union'
+  '"typedef"': 'keyword.control.typedef'
 
   'preproc_function_def > identifier:nth-child(1)': 'entity.name.function.preprocessor'
   'preproc_arg': 'meta.preprocessor.macro'
@@ -99,8 +99,18 @@ scopes:
   '''
   call_expression > identifier,
   call_expression > field_expression > field_identifier,
-  function_declarator > identifier
-  ''': 'entity.name.function'
+  ''': 'entity.name.function.call'
+
+
+  'function_declarator > identifier' : 'entity.name.function.def'
+
+  '''
+  parameter_declaration > identifier,
+  parameter_declaration > pointer_declarator > identifier,
+  parameter_declaration > pointer_declarator > pointer_declarator > identifier,
+  parameter_declaration > pointer_declarator > pointer_declarator > pointer_declarator > identifier,
+  parameter_declaration > pointer_declarator > pointer_declarator > pointer_declarator > pointer_declarator > identifier,
+  ''' : 'entity.name.variable.parameter'
 
   'statement_identifier': 'constant.variable'
 

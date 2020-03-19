@@ -1,9 +1,14 @@
 {
   "version": "0.60.19",
-  "name": "language-c",
+  "name": "language-c-treesitter",
   "description": "Atom language support for C/C++",
   "keywords": [
-    "tree-sitter"
+    "tree-sitter",
+    "treesitter",
+    "clang",
+    "c-lang",
+    "cpp",
+    "c++",
   ],
   "main": "lib/main",
   "homepage": "https://atom.github.io/language-c",
