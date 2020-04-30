@@ -110,6 +110,12 @@ scopes:
   parameter_declaration > pointer_declarator > pointer_declarator > identifier,
   parameter_declaration > pointer_declarator > pointer_declarator > pointer_declarator > identifier,
   parameter_declaration > pointer_declarator > pointer_declarator > pointer_declarator > pointer_declarator > identifier,
+  parameter_declaration > array_declarator > identifier,
+  parameter_declaration > array_declarator > array_declarator > identifier,
+  parameter_declaration > array_declarator > array_declarator > array_declarator > identifier,
+  parameter_declaration > pointer_declarator > array_declarator > identifier,
+  parameter_declaration > array_declarator > pointer_declarator > identifier,
+  parameter_declaration > pointer_declarator > pointer_declarator > array_declarator > identifier,
   ''' : 'entity.name.variable.parameter'
 
   'statement_identifier': 'constant.variable'
